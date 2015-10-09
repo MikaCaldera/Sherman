@@ -1,0 +1,10 @@
+/* Scss Document */
+
+// Load variables for this paticular Sherman color scheme. 
+@import "_sherman-variables-blue.scss";
+// adjustments to Bootstrap or Cornerstone variables. Things like font size, rounded corners, margins. Anything not color related. 
+@import "_sherman-variables-common.scss";
+// loads bootstrap, and cornerstone. 
+@import "../../cornerstone/style.scss";
+// Now... load styles that are particular to sherman. The gradient header, for instance. 
+@import "_sherman-common.scss";

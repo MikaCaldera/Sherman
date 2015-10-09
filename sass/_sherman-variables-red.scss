@@ -1,0 +1,147 @@
+/*
+	==Color Variables
+
+	These styles:
+		* overwrite bootstrap defaults
+		* overwrite cornerstone defaults
+		* are referenced in sherman-common.scss
+		
+	ONLY color variables in this sheet please. 
+	Other variables belong in sherman-variables-common.scss. 
+
+*/
+
+$header-border:			#BC3E3E;
+
+$title_parent:			#fff;
+$title_parentHover:		darken($title_parent, 15%); 
+
+$title_txt: 			#fff;
+$title_txtHover:		darken($title_txt, 15%);
+
+$headings-color:		#091733;
+
+$navbar-default-link-color:                rgba(255,255,255, 1);
+$navbar-default-link-hover-color:          #ccc;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         #e1e1e1;
+$navbar-default-link-active-bg:            transparent; 
+
+$dropdown-bg:                    #e9e9e9;
+$dropdown-link-color:            rgba(0,0,0, .6);
+$dropdown-link-hover-color:      #fff;
+$dropdown-link-hover-bg:         #081b39;
+
+$dropdown-link-active-color:     #000;
+$dropdown-link-active-bg:        #d0d0d0;
+
+$widget-border-color: 			#eaeaea;
+$widget-head-color: 			#081B39;
+
+$link-color:            #b02e36;
+$link-hover-color:      darken($link-color, 5%) !default;
+
+
+// Calendar
+$ecw-icon-month-bg: 						#f5f5f5;
+$ecw-icon-month-color: 						#b02e36;
+$ecw-icon-day-bg: 							#f5f5f5;
+$ecw-icon-day-color: 						#6b6b6b;
+
+$ecw-title-color:		#6b6b6b;
+$ecw-time-color:		#b02e36;
+
+// MEGA FOOTER
+$megafooter-widget-border-color:		transparent;
+$megafooter-widget-border-width:		0px;
+$megafooter-widget-bg:					transparent;
+$megafooter-widget-color:				#aaa;
+$megafooter-widget-link-color:			#fff;
+$megafooter-widget-link-hover:			$link-color;
+
+$megafooter-widget-head-bg:				$megafooter-widget-bg;
+$megafooter-widget-head-color:			$megafooter-widget-color;
+$megafooter-widget-head-border-width:	$megafooter-widget-border-width;
+$megafooter-widget-head-border-color:	$megafooter-widget-border-color;
+
+
+// SHARED
+$megafooter-ecw-title-color:			rgba(255,255,255,.7);						
+$megafooter-ecw-title-color-hover:		rgba(255,255,255, 1);					
+
+// LIST VIEW
+$megafooter-ecw-list-date-color:			$ecw-time-color;				
+$megafooter-ecw-list-date-color-hover:	darken($megafooter-ecw-list-date-color, 15%); 		 		 				
+
+// ICON VIEW
+$megafooter-ecw-icon-month-color:				$ecw-icon-month-color;							
+$megafooter-ecw-icon-month-color-hover: 		darken($ecw-icon-month-color, 15%);			
+$megafooter-ecw-icon-month-bg:					rgba(0,0,0, .6);			 						
+$megafooter-ecw-icon-month-bg-hover:			lighten($megafooter-ecw-icon-month-bg, 5%); 				
+$megafooter-ecw-icon-month-border-color:		$megafooter-widget-border-color	 !default;	 			
+$megafooter-ecw-icon-month-border-color-hover: 	$megafooter-widget-border-color	 !default;	
+
+$megafooter-ecw-icon-day-color:					rgba(255,255,255,.7);	 					
+$megafooter-ecw-icon-day-color-hover: 			rgba(255,255,255, 1);				
+$megafooter-ecw-icon-day-bg:					rgba(0,0,0, .6); 						
+$megafooter-ecw-icon-day-bg-hover:				lighten($megafooter-ecw-icon-month-bg, 5%);  					
+
+$megafooter-ecw-icon-day-border-color: 			$megafooter-widget-border-color !default;
+$megafooter-ecw-icon-day-border-color-hover: 	$megafooter-widget-border-color !default;		
+
+$megafooter-ecw-time-color:						$ecw-time-color;				 						
+$megafooter-ecw-time-color-hover:				darken($ecw-time-color, 15%); 		
+//Footer
+$footers-bg: 			#212121;
+$footers-link-color: 	rgba(255,255,255,.7);
+$footers-link-hover: 	rgba(255,255,255, 1);
+
+$footers-border-color:	#BC3E3E;
+
+/* Sherman Only Variables */
+$sh-masthead-start: #ab140d;
+$sh-masthead-end: 	#9b0000;
+
+$sh-navbar-toggle-color: 						rgba(255,255,255, .7);
+$sh-navbar-toggle-border-color: 				rgba(255,255,255, .1);
+$sh-navbar-toggle-background-color: 			rgba(0,0,0, .15);
+$sh-navbar-toggle-background-color-hover: 		rgba(0,0,0, .3);
+$sh-navbar-toggle-background-color-active: 		rgba(0,0,0, .6);
+
+$sh-icon-bar-background-color: 					rgba(255,255,255, .5);
+
+$sh-current-menu-ancestor-dropdown-toggle: 				#fff;
+$sh-navbar-collapse-dropdown-menu-background-color: 	darken($sh-masthead-end, 15%);
+
+$sh-nav-secondary-border-color: 	#eee;
+$sh-secondary-bg-color: 			#081b39;
+$sh-secondary-text-color:			#fff;
+$sh-table-border: 					rgba(255, 255, 255, 0.2);
+
+$sh-mega-footer-widget-heading:		#ffffff !important;
+$sh-mega-footer-border-color:  		rgba(0,0,0, 1);
+
+$sh-header1-color:		#091733;
+$sh-mega-icon-cal-border: none;
+
+// SEARCH
+// Header
+$sh-masthead-search-btn-bg:						rgba(255, 255, 255, .2);
+$sh-masthead-search-btn-color:					rgba(255, 255, 255, .5);
+$sh-masthead-search-input-bg:					rgba(255, 255, 255, .2);
+$sh-masthead-search-input-color:				rgba(255, 255, 255,  1);
+$sh-masthead-search-input-placeholder-color:	rgba(255, 255, 255, .5);
+// Content
+$sh-content-search-btn-bg:						rgba(0, 0, 0, .1);
+$sh-content-search-btn-color:					rgba(0, 0, 0, .5);
+$sh-content-search-input-bg:					rgba(0, 0, 0, .1);
+$sh-content-search-input-color:					rgba(0, 0, 0, .7);
+$sh-content-search-input-placeholder-color:		rgba(0, 0, 0, .5);
+// Footers
+$sh-footers-search-btn-bg:						rgba(255, 255, 255, .2);
+$sh-footers-search-btn-color:					rgba(255, 255, 255, .5);
+$sh-footers-search-input-bg:					rgba(255, 255, 255, .2);
+$sh-footers-search-input-color:					rgba(255, 255, 255,  1);
+$sh-footers-search-input-placeholder-color:		rgba(255, 255, 255, .5);
+
+

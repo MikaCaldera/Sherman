@@ -1,0 +1,513 @@
+/*
+
+    ==Sherman Main SASS
+
+    These styles:
+    
+        * define styles UNIQUE to sherman. 
+        * overwrite cornerstone defaults
+        * reference variables in the different color variables SASS
+        * reference variables in the sherman-varaibles-common.scss
+        
+    It's OK that this SASS won't compile. 
+    As long as the sherman-blue, sherman-black, etc SASS compile, then we're good. 
+        
+    No colors in this Stylesheet please. 
+    
+    If you need new ones, register them in the color variables sass's. 
+
+*/
+
+
+/*  Uconn Header
+====================================
+*/
+body{
+    background-color:#fafafa;   
+}
+#uc-header {
+    border-bottom-color: $header-border;
+}
+
+/*  Masthead
+====================================
+*/
+#masthead{ 
+    background: $sh-masthead-start;
+    background: -moz-linear-gradient(top,  $sh-masthead-start 0%, $sh-masthead-end 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$sh-masthead-start), color-stop(100%,$sh-masthead-end));
+    background: -webkit-linear-gradient(top,  $sh-masthead-start 0%,$sh-masthead-end 100%);
+    background: -o-linear-gradient(top,  $sh-masthead-start 0%,$sh-masthead-end 100%);
+    background: -ms-linear-gradient(top,  $sh-masthead-start 0%,$sh-masthead-end 100%);
+    background: linear-gradient(to bottom,  $sh-masthead-start 0%,$sh-masthead-end 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$sh-masthead-start}', endColorstr='#{$sh-masthead-end}',GradientType=0 );
+    #site-title{
+        .col-sm-8{ // ### - Bootstrap Class
+            padding-left:5px;
+            #uc-site-header{ 
+                padding-left:8px;
+                #uc-site-parent a{
+                    color:$title_parent;
+                    text-transform: uppercase;
+                    &:hover {
+                    color:$title_parentHover;
+                    }
+                }
+
+                #uc-site-title a {
+                    color:$title_txt;
+                    &:hover {
+                        color:$title_txtHover; 
+                    }
+                }
+            }
+        }
+        @include searchform($sh-masthead-search-btn-bg, $sh-masthead-search-btn-color, $sh-masthead-search-input-bg, $sh-masthead-search-input-color, $sh-masthead-search-input-placeholder-color);
+
+    }
+    #nav-wrapper{
+        #site-navigation{
+            border-bottom:none;
+            border-width:0px;
+            .navbar-header{
+                .navbar-toggle{
+                    color:$sh-navbar-toggle-color;
+                    border-color:$sh-navbar-toggle-border-color;
+                    background-color:$sh-navbar-toggle-background-color;
+                    &:hover {
+                    background-color:$sh-navbar-toggle-background-color-hover;
+                    }
+                    &:active {
+                    background-color:$sh-navbar-toggle-background-color-active;
+                    }
+                    .menu-icon .icon-bar{
+                        background-color:$sh-icon-bar-background-color;
+                    }
+                    .menu-label{
+                    	margin-bottom:-1px;
+                    }   
+                }
+                .navbar-brand{
+                    color:$title_txt;
+                    margin-top:4px;
+                }
+            }
+            
+
+        }
+		.navbar-collapse{
+                padding:0;
+                @media (max-width: 767px) {
+                    padding-left:15px;
+                    padding-right:15px;
+                }
+                .nav{
+                    &> li.open:after {
+                        content:'';
+                        display: block;
+                        position: absolute;
+                        left:50%;
+                        margin-left:-6px;
+                        bottom:0;
+                        height:0;
+                        width: 0;
+                        border:6px solid transparent;
+                        border-bottom-color:$dropdown-bg;
+                        @media (max-width: 767px) { 
+                            display:none;
+                        }
+                    }
+                    > li.active:after, > li.current-menu-ancestor:after{
+                    	-moz-border-bottom-colors: none;
+					    -moz-border-left-colors: none;
+					    -moz-border-right-colors: none;
+					    -moz-border-top-colors: none;
+					    border-color: transparent transparent white;
+					    border-image: none;
+					    border-style: solid;
+					    border-width: 6px;
+					    bottom: -1px;
+					    content: "";
+					    display: block;
+					    height: 0;  
+					    left: 50%;
+					    margin-left: -6px;
+					    position: absolute;
+					    width: 0;
+					    @media (max-width: 767px) {
+					    	display: none;
+					    }
+                    }
+                    li.current-menu-ancestor a.dropdown-toggle {
+                        color:$sh-current-menu-ancestor-dropdown-toggle;
+                    }
+                    > li:first-child > a {
+                   		 @media (min-width: 768px){
+                     		padding-left: 0;
+                        }
+                    }
+                    .dropdown-menu {
+                        padding:0;
+                        margin:0;
+                        border:none;
+                        -webkit-box-shadow: none;
+                        box-shadow: none;
+                        @media (max-width: 767px) {
+                            background-color: $sh-navbar-collapse-dropdown-menu-background-color;
+                        }
+                        a {
+                            padding-top: 10px;
+                            padding-bottom:10px;
+                        }
+                    }   
+                }
+                .navbar-formm{
+                	padding: 10px 15px 2px !important;
+					margin: 8px -15px 0px !important;
+                }
+
+            }
+        .searchform .btn{
+            @media (max-width: 767px){
+            	padding:6px 12px;
+				margin-top:-2px !important;
+            }
+        }
+    }
+}
+
+#drop-multi .navbar-collapse {
+	padding-left:0;
+}
+/* 	Left Nav  
+====================================
+*/
+
+#page-home { // #### This whole section is strange. 
+	padding-top:15px;
+		.widget .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+			padding-left:5px;
+			padding-right:5px;
+		}
+	.row {
+		margin-left:-5px;
+		margin-right:-5px; 
+	}
+}	
+
+/* 	Widgets - With Color Variables
+====================================
+*/
+#content{
+	.widget {
+		margin:0 0 10px;
+		.widget-head {
+			.widget-title {
+				font-weight:normal;
+			}
+		}
+		// Search Bar
+		&.widget_search{
+			@include searchform($sh-content-search-btn-bg, $sh-content-search-btn-color, $sh-content-search-input-bg, $sh-content-search-input-color, $sh-content-search-input-placeholder-color);
+			fieldset{
+				border: 1px solid #ccc;
+				.form-control{
+				box-shadow:none;
+				webkit-box-shadow:none;
+				moz-box-shadow:none;
+				}
+			}
+		}
+		// Uconn Calendar 	
+		&.uc-ecw{
+			.uc-cal {
+				.uc-cal-event-month {
+					padding-bottom:0!important;
+					padding-top:.6em!important;
+				}
+				.uc-cal-event-day {
+					padding-top:.3em!important;
+				}
+				.uc-cal-list a.uc-cal-event .uc-cal-event-date {
+					
+					.uc-cal-event-day {
+						padding-bottom:0.2em !important;
+						margin-top:-3px !important;
+						color:#777777 !important;
+						font-weight: 200 !important;
+					}
+				}
+			}
+		}
+		// Flexible Post Widgets
+		&.widget_dpe_fp_widget{
+			
+		}
+	}
+}
+@include shermanReset("#content .widget");
+
+/* 	Main Content
+====================================
+*/
+
+#primary{
+	#main{
+		border:1px solid #eee;
+		border-top:none;
+		padding-left:3em;
+		padding-right:3em;
+		@media (max-width: 767px) {
+			padding-left:1em;
+			padding-right:1em;
+		}
+		// No Border class for custom CSSS
+		img.no-border{
+			border:none;
+		}
+		.page, .post{
+			.entry-content {
+				.row {
+					margin:0;	
+				}
+			}
+		}
+		.post{
+			padding:1em 0em;
+		}
+		.page{
+			padding-top:0px;
+			padding-bottom:4em;
+			@media (max-width: 767px) {
+				padding-left:1em!important;
+				padding-right:1em!important;
+			}
+			h1 {
+			color:$sh-header1-color;
+			border-bottom:1px solid #ddd;
+			padding-bottom:.5em;
+			font-weight:normal;
+			margin-top:2.5em;
+			}
+			.entry-header h1 {
+				margin-top:20px;
+			}
+			h2 {
+				margin-top:1.5em;
+				margin-bottom:1em;
+			}
+			h1 + h2 {
+				margin-top:1em;	
+			}
+			h3 {
+				margin-top:2em;
+				font-weight:200;
+			}
+			h3.panel-title{
+				margin-top:0;
+				font-weight:200;
+			}
+		}
+		#page-archive{
+			.entry-header{
+				.page-title{
+					padding-left: 0.57em;
+					}
+				}
+			}
+		#page-blank {
+			.page {
+				padding-left:0;
+				padding-right:0;	
+			}
+		}
+	}
+}
+@include shermanReset("#primary");
+
+/* 	Footer  
+====================================
+*/
+#footers{
+	#mega-footer{
+		.widget{
+			&.widget_search{
+				@include searchform($sh-footers-search-btn-bg, $sh-footers-search-btn-color, $sh-footers-search-input-bg, $sh-footers-search-input-color, $sh-footers-search-input-placeholder-color);			
+			}
+			// Uconn Calendar 	
+			&.uc-ecw{
+				.uc-cal {
+					&.uc-iconcal{
+						.uc-cal-event-date{
+							border: 1px solid $sh-mega-icon-cal-border !important;
+							.uc-cal-event-month {	}
+							.uc-cal-event-day {	}
+						}
+						
+
+					}
+			
+					.uc-cal-list a.uc-cal-event .uc-cal-event-date {
+						
+						.uc-cal-event-day {
+
+						}
+					}
+				}
+			}	
+		}
+
+		.form-inline .form-control {
+			@media (max-width: 767px) {
+				float:left;
+			}
+		}
+		.table > thead > tr > th, 
+		.table > thead > tr > td, 
+		.table > tbody > tr > th, 
+		.table > tbody > tr > td, 
+		.table > tfoot > tr > th, 
+		.table > tfoot > tr > td {
+			border-top:1px solid transparent;
+			border-top-color:$sh-table-border;
+		}
+	}
+	#footer{
+		#uc-footer-links{
+
+		}
+	}
+}
+@include shermanReset("#footers");
+	
+
+	
+
+/* 	Table  ###
+====================================
+*/
+
+table .external .glyphicon-new-window {
+	font-size: 0.8em !important;
+    margin-left: 0.4em !important;
+    opacity: 0.7 !important;
+} 
+
+/* 	Events Calendar Grid 
+====================================
+*/
+#vb {
+	#vb-timespan {
+		a {
+			margin:0 0 0 .3em;
+			line-height:2em;
+		}
+	}
+}
+#events-grid-wrap {
+	th {
+		width:14.23%;	
+	}
+	th:first-child {
+		width:auto;
+	}
+}
+#events-table{
+	#events-toolbar{
+		margin-bottom: 1.55em !important; 
+	}
+	.table-responsive{
+
+	}
+}
+
+
+/* 	Profile Page
+====================================
+*/
+.page-template-page-user-profile-php {
+	.uup-user {
+		padding: 2em;
+		& > span {
+			display:block;
+		}
+		.uup-image{
+			margin: 20px 0px;
+		}
+		.uup-name {
+			font-weight:bold;
+	
+			.uup-first {
+				&:after {
+					content:' ';
+				}
+			}
+			.uup-last {}
+		}
+		.uup-title {
+		}
+		.uup-phones {
+			.uup-phone1 {}
+			.uup-phone2 {
+				display:block;
+			}
+		}
+		.uup-email {
+		}
+		.uup-fax {
+		}
+		.uup-office-location {
+		}
+		.uup-office-hours {
+		}
+		.uup-mailing-address {
+		}	
+	}
+}	
+
+	.uup-list a.uup-user {
+		float:none;
+	}
+
+
+
+.ie .form-control.search,
+.ie10 .form-control.search {
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+}
+
+// all ie8 users get default colors. 
+.ie8 {
+	#masthead {
+		background-image:none!important;
+		filter:none!important;
+		background-color:#142548!important;
+		
+		#site-title {
+			color:white!important;
+			
+			a {
+			color:white!important;
+			}
+			
+		}
+		
+		.navbar-default .navbar-nav > li > a {
+			color:white !important;
+		}
+	}
+	#footers {
+		* {
+			background-color:#333!important;
+			color:white!important;
+		}
+		a {
+			color:white!important;
+			
+			&:visited {
+				color:white!important;
+			}
+		}
+	}
+}
